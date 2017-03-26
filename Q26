@@ -73,5 +73,3 @@ done
 echo "short: ${short_array[@]}"
 echo "long: ${long_array[@]}"
 
-
-
