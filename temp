@@ -1,0 +1,11 @@
+declare -a array
+array[0]=2
+array[1]=2
+array[2]=4
+
+delete=2
+echo ${array[@]-$delete}
+
+
+
+

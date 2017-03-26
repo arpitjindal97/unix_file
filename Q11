@@ -1,0 +1,7 @@
+echo -e "Current Directory:"
+ls
+echo -e "\nDisks Status:"
+df -h
+sleep 3
+echo -e "\nCurrently Logged in:"
+who

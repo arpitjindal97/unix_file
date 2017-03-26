@@ -1,0 +1,11 @@
+printf "Enter the value of m :: "
+read m
+i=0;j=1;
+count=0
+while [ $count -lt $m ]
+do
+	printf "$i, "
+	temp=$i;i=$j;j=`expr $temp + $j`
+	count=`expr $count + 1`
+done
+printf "\n"

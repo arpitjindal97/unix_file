@@ -1,0 +1,8 @@
+printf "Enter a number (default:10): ";
+read num;
+if [ "$num" == "" ]
+then
+	num=10;
+fi
+printf "Starting Countdown :\n"
+seq $num 1

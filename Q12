@@ -1,0 +1,8 @@
+a=`cmp $1 $2`
+if [ "$a" != "" ]
+then
+	echo "Files are different"
+else
+	echo "Files are same"
+	rm $2
+fi

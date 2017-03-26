@@ -1,0 +1,5 @@
+echo "Please enter a search string and filename: ";
+read searchString;
+read fileName;
+
+grep $searchString $fileName

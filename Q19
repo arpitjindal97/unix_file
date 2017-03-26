@@ -1,0 +1,24 @@
+printf "Enter name of Student :: "
+read name
+printf "Enter roll no. :: "
+read roll
+printf "Enter marks of 5 subjects :\n"
+sum=0
+for i in `seq 0 4`
+do
+	read subject[$i]
+	sum=`echo "scale=2;$sum + ${subject[$i]}" | bc`
+done
+average=`echo "scale=2;$sum / 5" | bc`
+if [ `echo "$average >= 70" | bc` -eq 1 ]
+then
+	echo "$name is passed with Distinction"
+elif [ `echo "$average >= 60;"|bc` -eq 1 ] && [ `echo "$average <= 70"|bc` -eq 1 ]
+then
+	echo "$name is passed with First Division"
+elif [ `echo "$average >= 40;"|bc` -eq 1 ] && [ `echo "$average < 60"|bc` -eq 1 ]
+then
+	echo "$name is passed with Second Devision"
+else
+	echo "$name is fail"
+fi

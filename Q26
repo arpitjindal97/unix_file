@@ -1,0 +1,77 @@
+if [ $1 -gt $2 ]
+then
+	upper_limit=$2
+else
+	upper_limit=$1
+fi
+for i in `seq 1 $upper_limit`
+do
+	if [ `expr $1 % $i` -eq 0 -a `expr $2 % $i` -eq 0 ]
+	then
+		gcd=$i
+	fi
+done
+echo $gcd
+
+
+declare -a ham_burgur
+size=0
+get_lcm()
+{
+	for i in `seq 2 $1`
+	do
+		if [ `expr $1 % $i` -eq 0 ]
+		then
+			ham_burgur[$size]=$i
+			size=`expr $size + 1`
+			new=`expr $1 / $i`
+			if [ $new -ne 1 ]
+			then
+				get_lcm $new
+			fi
+			return
+		fi
+	done
+}
+get_lcm 6
+lcm_1=${ham_burgur[@]}
+size=0
+ham_burgur=()
+get_lcm 10
+
+echo "first: ${lcm_1[@]}"
+echo "second: ${ham_burgur[@]}"
+
+declare -a short_array
+len1=${#lcm_1[@]}
+len2=${#ham_burgur[@]}
+
+if [ $len1 -lt $len2 ]
+then
+	short_array=${lcm_1[@]}
+	long_array=${ham_burgur[@]}
+else
+	short_array=${ham_burgur[@]}
+	long_array=${lcm_1[@]}
+fi
+
+for i in ${short_array[@]}
+do
+	k=1
+	for j in ${long_array[@]}
+	do
+		if [ $i -eq $j ]
+		then
+			long_array=("${long_array[@]:1}" )
+			echo "${long_array[@]}"
+			break
+		fi
+		k=`expr $k + 1`
+	done
+done
+
+echo "short: ${short_array[@]}"
+echo "long: ${long_array[@]}"
+
+
+

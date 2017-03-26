@@ -1,0 +1,22 @@
+day=`date +%A`
+printf "It's $day today and you "
+case "$day" in
+"Monday")
+	echo "have to motivate yourself for College"
+	;;
+"Tuesday")
+	echo "have to give presentation"
+	;;
+"Wednesday")
+	echo "have to submit Unix practial file"
+	;;
+"Thursday")
+	echo "have to prepare for Viva"
+	;;
+"Friday")
+	echo "have to do assignment"
+	;;
+*)
+	echo "can do programming peacefully"
+	;;
+esac

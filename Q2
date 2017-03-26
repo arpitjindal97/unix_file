@@ -1,0 +1,2 @@
+echo -e "Showing output: \n";
+grep $1 $2;

@@ -1,0 +1,17 @@
+echo "1. 	KM to CM"
+echo "2. 	KM to DM"
+echo "Enter your choice (default:KM to Meters) : "
+read choice
+answer=0;
+case $choice in
+	1)
+		answer=`expr $1 \* 1000 \* 100`
+		;;
+	2)
+		answer=$(($1*100))
+		;;
+	*)
+		answer=$(($1*1000))
+		;;
+esac
+echo "Answer is: $answer"

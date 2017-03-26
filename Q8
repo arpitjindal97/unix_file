@@ -1,0 +1,8 @@
+for i in `seq 1 $#`
+do
+	`mv $1 \`basename $1 .txt\`.doc`
+	shift
+done
+
+
+

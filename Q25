@@ -1,0 +1,27 @@
+files=`ls`
+declare -a files_to_delete
+size=0
+for i in $files
+do
+	if [ ! -s $i ]
+	then
+		printf "$i "
+		files_to_delete[$size]=$i
+		size=`expr $size + 1`
+	fi
+done
+printf "\n"
+if [ $size -eq 0 ]
+then
+	echo "No zero-byte size file exists"
+else
+	printf "Do you want to delete these files (y/n)? "
+	read choice
+	if [ "$choice" == "y" ]
+	then
+		rm -rf ${files_to_delete[@]}
+		echo "Done"
+	else
+		echo "Operation cancelled by user"
+	fi
+fi

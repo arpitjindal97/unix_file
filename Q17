@@ -1,0 +1,7 @@
+files=`ls`
+for i in $files
+do
+	new_name=`echo $i | tr [:lower:] [:upper:]`
+	`mv $i $new_name`
+done
+

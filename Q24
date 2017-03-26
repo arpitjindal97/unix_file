@@ -1,0 +1,16 @@
+if [ `expr $# % 2` -eq 1 ]
+then
+	echo "Invalid number of argument"
+else
+	while [ $# -gt 0 ]
+	do
+		if [ ! -f $1 ]
+		then
+			echo "File doesn't exists!!! Stupid"
+		else
+			echo "Copying $1 to $2"
+			cp $1 $2
+		fi
+		shift 2
+	done
+fi

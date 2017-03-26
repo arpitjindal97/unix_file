@@ -1,0 +1,8 @@
+if [ $# -gt 3 ] 
+then
+	echo "Too many arguments.";
+	break;
+else
+	grep $1 $2 > $3;
+fi
+

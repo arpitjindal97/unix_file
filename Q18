@@ -1,0 +1,15 @@
+old_files=`ls *.old`
+
+mkdir old_files
+for i in  $old_files
+do
+	mv -f $i old_files/
+done
+
+new_files=`ls *.c`
+
+mkdir programs
+for i in $new_files
+do
+	mv -f $i programs/
+done

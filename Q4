@@ -1,0 +1,22 @@
+if [ -d $1 ]
+then
+	echo "This is a directory.";
+	break;
+elif [ -f $1 ]
+then
+	if [ -r $1 ]
+	then
+		echo "It's a file that is readable";
+	fi
+
+	if [ -w $1 ]
+	then
+		echo "It's a file that is writable.";
+	fi
+
+	if [ -x $1 ]
+	then
+		echo "It's a file that is executable";
+	fi
+fi
+

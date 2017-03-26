@@ -1,0 +1,12 @@
+echo "Enter a number: "
+read a;
+sum=0
+
+while [ $a -ne 0 ]
+do
+	r=`expr $a % 10`
+	sum=$(($sum + $r))
+	a=`expr $a / 10`
+done
+
+echo "Sum of digits: $sum"

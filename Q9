@@ -1,0 +1,7 @@
+file=$1
+shift
+for pattern in $*
+do
+	grep $pattern $file
+done
+

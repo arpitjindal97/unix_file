@@ -1,0 +1,4 @@
+cd $1
+lines=`ls -liS | awk '$6>=1000 {print $6,$10}'| wc -l`
+echo "total $lines files"
+ls -liS | awk '$6>=1000 {print $6,$10}'
