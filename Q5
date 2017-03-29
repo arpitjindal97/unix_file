@@ -1,5 +1,5 @@
-echo  'You have the following options: \n';
-echo  '1. Display todays date\n 2. Display current process of user.\n 3. List all the Files\n 4. Quit to Unix';
+echo -e 'You have the following options: \n';
+echo -e '1. Display todays date\n2. Display current process of user.\n3. List all the Files\n4. Quit to Unix';
 read comm;
 
 if [ $comm -eq 1 ]
